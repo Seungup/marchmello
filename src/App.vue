@@ -17,6 +17,12 @@
       <div v-if="this.$store.state.docState === 'singin'" class="btn-margin">
         <JoinMember />
       </div>
+      <div v-if="this.$store.state.docState === 'logined'" class="btn-margin">
+        <Logined />
+      </div>
+      <div v-if="this.$store.state.docState === 'add'" class="btn-margin">
+        <AddThread/>
+      </div>
     </transition>
 
     <!-- My Threads -->
@@ -48,10 +54,14 @@
   import Search from "./components/Search";
   import Bar from "./components/Bar";
   import JoinMember from "./components/JoinMember";
+  import Logined from "./components/Logined";
+  import AddThread from "./components/AddThread";
 
 export default {
   name: 'App',
   components: {
+    AddThread,
+    Logined,
     JoinMember,
     Bar,
     Search,

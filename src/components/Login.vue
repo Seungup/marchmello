@@ -29,7 +29,7 @@
             </v-card-text>
             <v-card-actions>
                 <v-btn color="#ffc980" width="100" class="rounded-card login-btn-1"
-                       v-on:click="$store.commit('setDocState', 'enter')">Enter</v-btn>
+                       v-on:click="$store.commit('setDocState', 'logined')">Enter</v-btn>
                 <v-spacer></v-spacer>
                 <v-btn color="#ffc980" class="rounded-card login-btn-2"
                        v-on:click="$store.commit('setDocState', 'default')">Cancle</v-btn>
