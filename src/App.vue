@@ -28,21 +28,13 @@
     </transition>
 
     <!-- My Threads -->
-    <MyThreads />
+    <MyThreads v-if="this.$store.state.docState === 'logined' || this.$store.state.docState === 'add'"/>
 
     <!-- All Threads -->
     <AllThreads />
 
-
     <!-- FOOTER -->
-      <v-footer padless>
-        <v-col
-                class="text-center"
-                cols="12"
-        >
-          {{ new Date().getFullYear() }} — <strong>Seungup Noh</strong>
-        </v-col>
-      </v-footer>
+    <Footer />
   </v-app>
 </template>
 
@@ -56,10 +48,12 @@
   import AddThread from "./components/AddThread";
   import MyThreads from "./components/MyThreads";
   import AllThreads from "./components/AllThreads";
+  import Footer from "./components/Footer";
 
 export default {
   name: 'App',
   components: {
+    Footer,
     AllThreads,
     MyThreads,
     AddThread,

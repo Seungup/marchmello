@@ -78,6 +78,7 @@
 
 <style scoped>
     .ed-title{
+        color: #707070;
         margin-left: 5%;
     }
 </style>

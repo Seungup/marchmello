@@ -8,7 +8,6 @@
                    v-on:click="$store.commit('setDocState', 'singin')">Sing in</v-btn>
         </v-card-actions>
         <div class="ma-4">
-            <v-divider></v-divider>
         </div>
     </div>
 </template>
@@ -21,6 +20,7 @@
 
 <style scoped>
     .ed-title{
+        color: #707070;
         margin-left: 5%;
     }
 </style>
