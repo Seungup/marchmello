@@ -1,8 +1,8 @@
 <template>
-    <div class="default-margin">
+    <div class="default-margin" id="search">
         <v-card-actions class="align-center">
-            <v-text-field class="text-center" solo rounded dense clearable placeholder="Search Threads"
-                          @keyup.enter="searching"
+            <v-text-field class="text-center" solo rounded dense clearable placeholder="Search Threads" v-model="text"
+                v-on:keyup.enter="$store.commit('setSearchKeyword', text)"
             />
         </v-card-actions>
     </div>
@@ -10,7 +10,12 @@
 
 <script>
     export default {
-        name: "Search"
+        name: "Search",
+        data: function () {
+            return {
+                text: null
+            }
+        }
     }
 </script>
 
