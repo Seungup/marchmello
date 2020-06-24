@@ -1,8 +1,10 @@
 <template>
+    <div class="default-margin">
         <v-card-actions class="align-center">
-            <v-text-field solo rounded dense placeholder="Search"
-                         />
+            <v-text-field class="text-center" solo rounded dense clearable placeholder="Search Threads"
+            />
         </v-card-actions>
+    </div>
 </template>
 
 <script>
@@ -12,5 +14,8 @@
 </script>
 
 <style scoped>
-
+.default-margin{
+    margin-left: 24px;
+    margin-right: 24px;
+}
 </style>

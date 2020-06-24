@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <h1>Login</h1>
+        <h1 class="ed-title">Login</h1>
         <v-card
                 width="324"
                 height="272"
@@ -58,6 +58,9 @@
         width: 94px;
         height: 31px;
         text-align: center;
+    }
+    .ed-title{
+        margin-left: 5%;
     }
 </style>
 

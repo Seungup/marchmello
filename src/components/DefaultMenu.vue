@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <h1>My Threads</h1>
+        <h1 class="ed-title">My Threads</h1>
         <v-card-actions>
             <v-btn style="margin-right: 50px" color="#b4dfea" x-large width="180" height="84" rounded
                    v-on:click="$store.commit('setDocState', 'login')">Login</v-btn>
@@ -20,5 +20,7 @@
 </script>
 
 <style scoped>
-
+    .ed-title{
+        margin-left: 5%;
+    }
 </style>

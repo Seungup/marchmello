@@ -1,20 +1,23 @@
 <template>
   <v-app>
+    <!-- App bar-->
+    <bar/>
 
     <!-- Search Bar -->
     <Search/>
 
     <!-- Condition bar -->
-    <v-card-actions>
-      <transition>
-        <div v-if="this.$store.state.docState === 'default'" class="btn-margin">
-          <default-menu />
-        </div>
-        <div v-if="this.$store.state.docState === 'login'" class="btn-margin">
-          <login />
-        </div>
-      </transition>
-    </v-card-actions>
+    <transition>
+      <div v-if="this.$store.state.docState === 'default'" class="btn-margin">
+        <default-menu />
+      </div>
+      <div v-if="this.$store.state.docState === 'login'" class="btn-margin">
+        <login />
+      </div>
+      <div v-if="this.$store.state.docState === 'singin'" class="btn-margin">
+        <JoinMember />
+      </div>
+    </transition>
 
     <!-- My Threads -->
 
@@ -43,10 +46,14 @@
   import Login from "./components/Login";
   import DefaultMenu from "./components/DefaultMenu";
   import Search from "./components/Search";
+  import Bar from "./components/Bar";
+  import JoinMember from "./components/JoinMember";
 
 export default {
   name: 'App',
   components: {
+    JoinMember,
+    Bar,
     Search,
     DefaultMenu,
     Login
