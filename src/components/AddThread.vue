@@ -1,5 +1,5 @@
 <template>
-    <v-app>
+    <div>
         <h1 class="ed-title">Add Thread</h1>
         <v-card
                 width="324"
@@ -35,7 +35,7 @@
         <div class="ma-4">
             <v-divider></v-divider>
         </div>
-    </v-app>
+    </div>
 </template>
 
 <script>

@@ -2,6 +2,7 @@
     <div class="default-margin">
         <v-card-actions class="align-center">
             <v-text-field class="text-center" solo rounded dense clearable placeholder="Search Threads"
+                          @keyup.enter="searching"
             />
         </v-card-actions>
     </div>

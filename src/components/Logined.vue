@@ -1,5 +1,5 @@
 <template>
-    <v-app>
+    <div>
         <h1 class="ed-title">My Profile</h1>
         <v-card-actions>
             <v-btn style="margin-right: 50px" color="#b4dfea" x-large width="180" height="84" rounded disabled
@@ -10,7 +10,7 @@
         <div class="ma-4">
             <v-divider></v-divider>
         </div>
-    </v-app>
+    </div>
 </template>
 
 <script>

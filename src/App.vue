@@ -4,7 +4,9 @@
     <bar/>
 
     <!-- Search Bar -->
-    <Search/>
+    <Transition>
+      <search v-if="this.$store.state.searchState === true"/>
+    </Transition>
 
     <!-- Condition bar -->
     <transition>
@@ -26,25 +28,20 @@
     </transition>
 
     <!-- My Threads -->
-
+    <MyThreads />
 
     <!-- All Threads -->
-
+    <AllThreads />
 
     <!-- FOOTER -->
-    <v-footer
-            absolute
-            class="font-weight-medium"
-    >
-      <v-col
-              class="text-center"
-              cols="12"
-      >
-        <h5>
-          <strong>Copyrightⓒ{{ new Date().getFullYear() }} Seungup Noh All rights reserved.</strong>
-        </h5>
-      </v-col>
-    </v-footer>
+      <v-footer padless>
+        <v-col
+                class="text-center"
+                cols="12"
+        >
+          {{ new Date().getFullYear() }} — <strong>Seungup Noh</strong>
+        </v-col>
+      </v-footer>
   </v-app>
 </template>
 
@@ -56,10 +53,14 @@
   import JoinMember from "./components/JoinMember";
   import Logined from "./components/Logined";
   import AddThread from "./components/AddThread";
+  import MyThreads from "./components/MyThreads";
+  import AllThreads from "./components/AllThreads";
 
 export default {
   name: 'App',
   components: {
+    AllThreads,
+    MyThreads,
     AddThread,
     Logined,
     JoinMember,

@@ -1,5 +1,12 @@
 <template>
-    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-app-bar
+    color="white"
+    elevate-on-scroll>
+        <v-btn icon v-on:click="$store.commit('chageSearchState')">
+            <v-icon>mdi-magnify</v-icon>
+        </v-btn>
+    </v-app-bar>
+
 </template>
 
 <script>
