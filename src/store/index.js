@@ -3,13 +3,52 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+class Threads {
+  constructor(title, description, id) {
+    this.title = title;
+    this.des = description;
+    this.id = id;
+  }
+}
+
 export default new Vuex.Store({
   state: {
     docState: 'default',
     searchState : true,
 
-    searchKeyword : null,
-    searchTrigger : false
+    searchKeyword : '',
+    searchTrigger : false,
+
+    items : [
+      new Threads(
+        'lkjnlkjnl ',
+        'Foster thekjl People',
+        123
+      ),
+      new Threads(
+          'lkjnlkjnl ',
+          'Foster thekjl People',
+          123
+      ),
+      new Threads(
+          'lkjnlkjnl ',
+          'Foster thekjl People',
+          123
+      ),  new Threads(
+          'lkjnlkjnl ',
+          'Foster thekjl People',
+          123
+      ),  new Threads(
+          'lkjnlkjnl ',
+          'Foster thekjl People',
+          123
+      ),  new Threads(
+          'lkjnlkjnl ',
+          'Foster thekjl People',
+          123
+      ),
+
+    ]
   },
   mutations: {
     setDocState (state, stateValue) {
@@ -29,6 +68,11 @@ export default new Vuex.Store({
     setSearchKeywordNull(state) {
       state.searchKeyword = null
       state.searchTrigger = false
+    },
+    filteredList() {
+      return this.items.filter(post => {
+        return post.title.toLowerCase().includes(this.searchKeyword.toLowerCase())
+      })
     }
   },
   actions: {

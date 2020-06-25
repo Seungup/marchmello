@@ -7,7 +7,7 @@
         <v-container>
             <v-row dense>
                 <v-col
-                        v-for="(item, i) in items"
+                        v-for="(item, i) in $store.state.items"
                         :key="i"
                         cols="12"
                 >
@@ -62,19 +62,9 @@
 
 <script>
     export default {
-        data: () => ({
-            items: [
-                {
-                    title: 'SupermodelSupermodelSupermodelSupermodel',
-                    des: 'Foster the PeopleFoster the PeopleFoster the PeopleFoster the PeopleFoster the People',
-                },
-                {
-                    title: 'Halcyon Days',
-                    des: 'Ellie Goulding',
-                },
-            ],
-        }),
+
     }
+
 </script>
 
 <style scoped>

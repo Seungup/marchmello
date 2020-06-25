@@ -18,18 +18,36 @@
                             solo
                             rounded
                             dense
+                            :type="value ? 'password' : 'text'"
+                            v-model="password"
                     >
 
                     </v-text-field>
 
 
                     <!-- Re PW -->
-                    <v-text-field
-                            placeholder="Check Password"
-                            solo
-                            rounded
-                            dense
-                    />
+                    <transition>
+                        <v-text-field
+                                v-if="password !== repass"
+                                placeholder="Check Password"
+                                solo
+                                rounded
+                                dense
+                                error-messages="Not Mathced"
+                                v-model="repass"
+                                :type="value ? 'password' : 'text'"
+                        />
+                        <v-text-field
+                                v-if="password === repass"
+                                placeholder="Check Password"
+                                solo
+                                rounded
+                                dense
+                                v-model="repass"
+                                :type="value ? 'password' : 'text'"
+                        />
+                    </transition>
+
 
 
                     <!-- Email -->
@@ -56,7 +74,14 @@
 
 <script>
     export default {
-        name: "JoinMember"
+        name: "JoinMember",
+        data() {
+            return {
+                value: String,
+                password: "",
+                repass: "",
+            }
+        }
     }
 </script>
 

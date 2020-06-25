@@ -1,5 +1,5 @@
 <template>
-    <v-app>
+    <div>
         <h1 class="ed-title">Login</h1>
         <v-card
                 width="324"
@@ -11,11 +11,12 @@
                 <v-form>
                     <v-text-field solo rounded dense placeholder="ID" />
                     <v-text-field
-                            placeholder="PW"
                             solo
                             rounded
                             dense
-                    />
+                            placeholder="Enter password"
+                            :type="value ? 'password' : 'text'"
+                    ></v-text-field>
                 </v-form>
                 <v-col>
                     <v-row justify="center">
@@ -38,7 +39,7 @@
         <div class="ma-4">
             <v-divider></v-divider>
         </div>
-    </v-app>
+    </div>
 </template>
 
 <style scoped>
@@ -66,6 +67,11 @@
 
 <script>
     export default {
-        name: "login"
+        name: "login",
+        data() {
+            return {
+                value: String,
+            }
+        }
     }
 </script>

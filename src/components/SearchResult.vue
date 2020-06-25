@@ -3,11 +3,11 @@
             max-width="400"
             class="mx-auto"
     >
-        <h1 class="ed-title">All Threads</h1>
+        <h1 class="ed-title">'{{$store.state.searchKeyword}}' Search Result</h1>
         <v-container>
             <v-row dense>
                 <v-col
-                        v-for="(item, i) in $store.state.items"
+                        v-for="(item, i) in items"
                         :key="i"
                         cols="12"
                 >
@@ -62,13 +62,10 @@
 
 <script>
     export default {
-        name: "AllThreads"
+        name: "SearchResult",
     }
 </script>
 
 <style scoped>
-    .ed-title{
-        color: #707070;
-        margin-left: 5%;
-    }
+
 </style>

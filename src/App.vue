@@ -5,7 +5,7 @@
 
     <!-- Search Bar -->
     <Transition>
-      <search v-if="this.$store.state.searchState === true"/>
+      <search v-if="this.$store.state.searchState === true" v-on:keyup.enter="this.$store.commit('chageSearchState')"/>
     </Transition>
 
     <!-- Condition bar -->
@@ -25,13 +25,17 @@
       <div v-if="this.$store.state.docState === 'add'" class="btn-margin">
         <AddThread/>
       </div>
+
     </transition>
 
-    <!-- My Threads -->
-    <MyThreads v-if="this.$store.state.docState === 'logined' || this.$store.state.docState === 'add'"/>
 
-    <!-- All Threads -->
-    <AllThreads />
+      <!-- My Threads -->
+      <MyThreads  v-if="this.$store.state.docState === 'logined'" />
+
+      <!-- All Threads -->
+      <AllThreads />
+
+
 
     <!-- FOOTER -->
     <Footer />
