@@ -25,7 +25,6 @@
       <div v-if="this.$store.state.docState === 'add'" class="btn-margin">
         <AddThread/>
       </div>
-
     </transition>
 
 
@@ -38,8 +37,6 @@
       </div>
       <div v-else>
         <SearchResult/>
-        <div></div>
-        <MyThreads  v-if="this.$store.state.docState === 'logined'" />
       </div>
     </transition>
 

@@ -68,11 +68,6 @@ export default new Vuex.Store({
     setSearchKeywordNull(state) {
       state.searchKeyword = null
       state.searchTrigger = false
-    },
-    filteredList() {
-      return this.items.filter(post => {
-        return post.title.toLowerCase().includes(this.searchKeyword.toLowerCase())
-      })
     }
   },
   actions: {
