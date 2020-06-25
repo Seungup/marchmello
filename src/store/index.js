@@ -21,8 +21,8 @@ export default new Vuex.Store({
 
     items : [
       new Threads(
-        'lkjnlkjnl ',
-        'Foster thekjl People',
+        'lkjnlkjnthekjlthekjll ',
+        'Foster thekjlthekjlthekjlthektthekjlthekjlthekjlthekjlhekjlthekjlthekjljlthekjlthekjlthekjl People',
         123
       ),
       new Threads(

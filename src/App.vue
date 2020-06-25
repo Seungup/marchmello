@@ -29,11 +29,20 @@
     </transition>
 
 
-      <!-- My Threads -->
-      <MyThreads  v-if="this.$store.state.docState === 'logined'" />
+    <!-- Threads -->
+    <transition>
+      <div v-if="this.$store.state.searchTrigger === false || this.$store.state.searchKeyword === ''">
+        <MyThreads  v-if="this.$store.state.docState === 'logined'" />
+        <div></div>
+        <AllThreads />
+      </div>
+      <div v-else>
+        <SearchResult/>
+        <div></div>
+        <MyThreads  v-if="this.$store.state.docState === 'logined'" />
+      </div>
+    </transition>
 
-      <!-- All Threads -->
-      <AllThreads />
 
 
 
@@ -53,10 +62,12 @@
   import MyThreads from "./components/MyThreads";
   import AllThreads from "./components/AllThreads";
   import Footer from "./components/Footer";
+  import SearchResult from "./components/SearchResult";
 
 export default {
   name: 'App',
   components: {
+    SearchResult,
     Footer,
     AllThreads,
     MyThreads,
