@@ -27,6 +27,25 @@
       </div>
     </transition>
 
+    <!-- Functions-->
+    <div v-if="this.$store.state.docState === 'postThread'" >
+        {{
+        this.$store.commit('setDocState', 'logined')
+        }}
+        {{
+        this.$store.commit('setTitle' ,'')
+        }}
+        {{
+        this.$store.commit('setDescription', '')}}
+        }}
+    </div>
+
+
+
+
+
+
+
 
     <!-- Threads -->
     <transition>
@@ -44,7 +63,6 @@
 
 
     <!-- FOOTER -->
-    <Footer />
   </v-app>
 </template>
 
@@ -58,14 +76,12 @@
   import AddThread from "./components/AddThread";
   import MyThreads from "./components/MyThreads";
   import AllThreads from "./components/AllThreads";
-  import Footer from "./components/Footer";
   import SearchResult from "./components/SearchResult";
 
 export default {
   name: 'App',
   components: {
     SearchResult,
-    Footer,
     AllThreads,
     MyThreads,
     AddThread,

@@ -13,11 +13,16 @@ class Threads {
 
 export default new Vuex.Store({
   state: {
+    baseUrl: 'http://localhost:8080',
+
     docState: 'default',
     searchState : true,
 
     searchKeyword : '',
     searchTrigger : false,
+
+    title: '',
+    description: '',
 
     items : [
       new Threads(
@@ -25,29 +30,6 @@ export default new Vuex.Store({
         'Foster thekjlthekjlthekjlthektthekjlthekjlthekjlthekjlhekjlthekjlthekjljlthekjlthekjlthekjl People',
         123
       ),
-      new Threads(
-          'lkjnlkjnl ',
-          'Foster thekjl People',
-          123
-      ),
-      new Threads(
-          'lkjnlkjnl ',
-          'Foster thekjl People',
-          123
-      ),  new Threads(
-          'lkjnlkjnl ',
-          'Foster thekjl People',
-          123
-      ),  new Threads(
-          'lkjnlkjnl ',
-          'Foster thekjl People',
-          123
-      ),  new Threads(
-          'lkjnlkjnl ',
-          'Foster thekjl People',
-          123
-      ),
-
     ]
   },
   mutations: {
@@ -68,6 +50,24 @@ export default new Vuex.Store({
     setSearchKeywordNull(state) {
       state.searchKeyword = null
       state.searchTrigger = false
+    },
+    setTitle(state, title) {
+      state.title = title
+    },
+    setDescription(state, desc) {
+      state.description = desc
+    },
+    postThread(state) {
+      this.$http.post(
+          "http://localhost:8080/threads/",
+          `{
+          'title': ${state.title},
+          'description': ${state.description}
+          }`
+          ).then((result) =>{
+            console.log(result)
+            this.$store.commit('setDocState', 'logined')
+      })
     }
   },
   actions: {

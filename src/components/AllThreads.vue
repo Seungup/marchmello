@@ -1,8 +1,6 @@
 <template>
-    <v-card
-            max-width="400"
-            class="mx-auto"
-    >
+    <div>
+
         <h1 class="ed-title">All Threads</h1>
         <v-container>
             <v-row dense>
@@ -57,7 +55,7 @@
                 </v-col>
             </v-row>
         </v-container>
-    </v-card>
+    </div>
 </template>
 
 <script>

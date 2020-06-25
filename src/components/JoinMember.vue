@@ -67,7 +67,6 @@
             </v-card-actions>
         </v-card>
         <div class="ma-4">
-            <v-divider></v-divider>
         </div>
     </div>
 </template>

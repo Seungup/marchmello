@@ -8,7 +8,6 @@
                    v-on:click="$store.commit('setDocState', 'add')">Add</v-btn>
         </v-card-actions>
         <div class="ma-4">
-            <v-divider></v-divider>
         </div>
     </div>
 </template>
