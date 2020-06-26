@@ -23,14 +23,14 @@
 
                                 <transition>
                                     <v-card-title
-                                            v-if="item.title.length > 15"
+                                            v-if="item.title.toString().length > 15"
                                             class="headline"
                                             v-text="item.title.toString().substring(0, 15) + '...'"
                                             style="color: #707070"
                                     ></v-card-title>
 
                                     <v-card-title
-                                            v-if="item.title.length < 15"
+                                            v-if="item.title.toString().length < 15"
                                             class="headline"
                                             v-text="item.title"
                                             style="color: #707070"
@@ -42,8 +42,8 @@
 
                                 </div>
                                 <transition>
-                                    <v-card-subtitle v-if="item.des.length > 40" v-text="item.des.toString().substring(0, 40) + '...'" style="color: #707070"></v-card-subtitle>
-                                    <v-card-subtitle v-if="item.des.length < 40" v-text="item.des" style="color: #707070"></v-card-subtitle>
+                                    <v-card-subtitle v-if="item.description.toString().length > 40" v-text="item.description.toString().substring(0, 40) + '...'" style="color: #707070"></v-card-subtitle>
+                                    <v-card-subtitle v-if="item.description.toString().length < 40" v-text="item.description" style="color: #707070"></v-card-subtitle>
                                 </transition>
 
 
