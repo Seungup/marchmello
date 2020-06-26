@@ -7,6 +7,10 @@
     <v-btn icon v-on:click="getData">
         <v-icon>mdi-refresh</v-icon>
     </v-btn>
+
+    <v-btn icon v-on:click="$store.commit('changeDiv')">
+        <v-icon>mdi-magnify</v-icon>
+    </v-btn>
     </div>
 </template>
 
@@ -19,7 +23,7 @@
                     this.$store.state.baseUrl + 'threads/'
                 ).then( (response) => {
                     console.log("data =", response.data);
-                    this.$store.commit('setThreads', response.data);
+                    this.$store.commit('setThreads', response.data._embedded.threads);
                 }).catch(function (error) {
                     console.log(error);
                 })

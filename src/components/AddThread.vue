@@ -53,7 +53,6 @@
             }
         },
         methods: {
-            // post하고 get을 바로하는게 아니라,
             fetchData: function() {
                 this.$http.post(
                     this.$store.state.baseUrl + 'threads/',

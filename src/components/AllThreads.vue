@@ -1,6 +1,9 @@
 <template>
     <div class="default-margin">
-        {{$store.commit('getThrads')}}
+        <v-card
+                max-width="400"
+                class="mx-auto"
+        >
         <h1 class="ed-title">All Threads</h1>
         <transition>
             <div v-if="$store.state.items[0]._embedded.threads.length > 0">
@@ -67,6 +70,7 @@
                 </v-container>
             </div>
         </transition>
+        </v-card>
     </div>
 </template>
 

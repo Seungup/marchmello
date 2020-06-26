@@ -2,7 +2,7 @@
     <div class="default-margin">
         <h1 class="ed-title">My Profile</h1>
         <v-card-actions>
-            <v-btn style="margin-right: 50px" color="#b4dfea" x-large width="180" height="84" rounded
+            <v-btn style="margin-right: 25px" color="#b4dfea" x-large width="180" height="84" rounded
                    v-on:click="$store.commit('setDocState', 'default')">Logout</v-btn>
             <v-btn color="#b4dfea" x-large width="50" height="84" rounded
                    v-on:click="$store.commit('setDocState', 'add')">Add</v-btn>

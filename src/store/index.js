@@ -18,6 +18,7 @@ export default new Vuex.Store({
     // DOC
     docState: 'default',
     searchState : true,
+    dev: false,
 
     searchKeyword : '',
     searchTrigger : false,
@@ -68,10 +69,17 @@ export default new Vuex.Store({
       state.userNickname = nickname
     },
     setThreads(state, threads){
-      state.items[0] = threads
+      state.items[0]._embedded.threads = threads
     },
     addThread(state, item){
       state.items[0]._embedded.threads.push(item)
+    },
+    changeDiv(state) {
+      if(state.dev === true){
+        state.dev = false
+      } else {
+        state.dev = true
+      }
     }
   },
   actions: {

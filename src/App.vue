@@ -3,9 +3,13 @@
     <!-- App bar-->
     <bar/>
 
-    <p>
-        {{this.$store.state.items[0]._embedded.threads}}
-    </p>
+
+    <div v-if="this.$store.state.dev === true">
+        <hr>
+        <p> Thread Data = {{this.$store.state.items[0]._embedded.threads}}</p>
+        <p> Document State = {{this.$store.state.docState}} </p>
+        <hr>
+    </div>
 
     <!-- Search Bar -->
     <Transition>
