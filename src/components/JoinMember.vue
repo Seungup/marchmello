@@ -51,7 +51,7 @@
 
 
                     <!-- Email -->
-                    <v-text-field solo rounded dense placeholder="Email" />
+                    <v-text-field solo rounded dense placeholder="Nickname" />
 
 
                 </v-form>

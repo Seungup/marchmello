@@ -3,18 +3,19 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-class Threads {
-  constructor(title, description, id) {
-    this.title = title;
-    this.des = description;
-    this.id = id;
-  }
-}
 
 export default new Vuex.Store({
   state: {
-    baseUrl: 'http://localhost:8080',
+    // USER
+    userNickname: '',
+    userId: '',
+    userPassword: '',
 
+    // LINK
+    baseUrl: 'http://localhost:8080/',
+
+
+    // DOC
     docState: 'default',
     searchState : true,
 
@@ -24,12 +25,13 @@ export default new Vuex.Store({
     title: '',
     description: '',
 
-    items : [
-      new Threads(
-        'lkjnlkjnthekjlthekjll ',
-        'Foster thekjlthekjlthekjlthektthekjlthekjlthekjlthekjlhekjlthekjlthekjljlthekjlthekjlthekjl People',
-        123
-      ),
+    items : [{
+      "_embedded": {
+        "threads": [
+
+        ]
+      }
+    }
     ]
   },
   mutations: {
@@ -57,17 +59,20 @@ export default new Vuex.Store({
     setDescription(state, desc) {
       state.description = desc
     },
-    postThread(state) {
-      this.$http.post(
-          "http://localhost:8080/threads/",
-          `{
-          'title': ${state.title},
-          'description': ${state.description}
-          }`
-          ).then((result) =>{
-            console.log(result)
-            this.$store.commit('setDocState', 'logined')
-      })
+    setUserId(state, id) {
+      state.userId = id
+    },
+    setUserPassword(state, password) {
+      state.userPassword = password
+    },
+    setUserNicname(state, nickname){
+      state.userNickname = nickname
+    },
+    setThreads(state, threads){
+      state.items = threads
+    },
+    addThread(state, item){
+      state.items._embedded.threads.append(item)
     }
   },
   actions: {

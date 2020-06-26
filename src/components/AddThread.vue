@@ -33,7 +33,7 @@
                            v-on:click="
                            $store.commit('setTitle', title);
                            $store.commit('setDescription', description);
-                           $store.commit('setDocState', 'postThread');
+                           $store.commit('setDocState', 'logined');
                            fetchData();
                            ">Post</v-btn>
                 </v-card-actions>
@@ -53,22 +53,30 @@
             }
         },
         methods: {
+            // post하고 get을 바로하는게 아니라,
             fetchData: function() {
                 this.$http.post(
-                    'http://localhost:8080/threads/',
+                    this.$store.state.baseUrl + 'threads/',
 
                     {
                         title : this.$store.state.title,
                         description : this.$store.state.description
                     }
                     )
-                    .then(function(response) {
-                        console.log(response);
-                    })
                     .catch(function(error) {
                         console.log(error);
-                    });
-            }
+                    }).then(this.$store.commit('addThread', {})); // <- 여기 나중에 수정
+            },
+            getData: function () {
+                this.$http.get(
+                    this.$store.state.baseUrl + 'threads/'
+                ).then( (response) => {
+                    console.log("data =", response.data);
+                    this.$store.commit('setThreads', response.data);
+                }).catch(function (error) {
+                    console.log(error);
+                })
+            },
         }
     }
 

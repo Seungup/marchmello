@@ -4,7 +4,7 @@
         <v-container>
             <v-row dense>
                 <v-col
-                        v-for="(item, i) in $store.state.items"
+                        v-for="(item, i) in $store.state.items._embedded.threads"
                         :key="i"
                         cols="12"
                 >

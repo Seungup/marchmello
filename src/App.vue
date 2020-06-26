@@ -3,6 +3,10 @@
     <!-- App bar-->
     <bar/>
 
+    <p>
+        {{this.$store.state.items._embedded}}
+    </p>
+
     <!-- Search Bar -->
     <Transition>
       <search v-if="this.$store.state.searchState === true" v-on:keyup.enter="this.$store.commit('chageSearchState')"/>

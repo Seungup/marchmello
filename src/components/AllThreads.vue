@@ -1,11 +1,11 @@
 <template>
     <div>
-
+        {{$store.commit('getThrads')}}
         <h1 class="ed-title">All Threads</h1>
         <v-container>
             <v-row dense>
                 <v-col
-                        v-for="(item, i) in $store.state.items"
+                        v-for="(item, i) in $store.state.items._embedded.threads"
                         :key="i"
                         cols="12"
                 >
@@ -22,7 +22,7 @@
                                     <v-card-title
                                             v-if="item.title.length > 15"
                                             class="headline"
-                                            v-text="item.title.toString().substring(0, 15) + '...'"
+                                            v-text="item.title.substring(0, 15) + '...'"
                                             style="color: #707070"
                                     ></v-card-title>
 
@@ -39,8 +39,8 @@
 
                                 </div>
                                 <transition>
-                                    <v-card-subtitle v-if="item.des.length > 40" v-text="item.des.toString().substring(0, 40) + '...'" style="color: #707070"></v-card-subtitle>
-                                    <v-card-subtitle v-if="item.des.length < 40" v-text="item.des" style="color: #707070"></v-card-subtitle>
+                                    <v-card-subtitle v-if="item.description.length > 25" v-text="item.description.substring(0, 25) + '...'" style="color: #707070"></v-card-subtitle>
+                                    <v-card-subtitle v-if="item.description.length < 25" v-text="item.description" style="color: #707070"></v-card-subtitle>
                                 </transition>
 
 
