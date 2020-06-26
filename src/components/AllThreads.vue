@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="default-margin">
         {{$store.commit('getThrads')}}
         <h1 class="ed-title">All Threads</h1>
         <transition>
@@ -61,7 +61,8 @@
             <div v-else>
                 <v-container>
                     <v-row dense>
-                <h3 class="ed-title"> Can't find any thread &#128549;</h3>
+                        <h1 style="color: #707070;">Sorry..</h1>
+                        <h2 style="color: #707070"> Can't find any thread &#128549; </h2>
                     </v-row>
                 </v-container>
             </div>
@@ -79,5 +80,9 @@
     .ed-title{
         color: #707070;
         margin-left: 5%;
+    }
+    .default-margin{
+        margin-left: 24px;
+        margin-right: 24px;
     }
 </style>

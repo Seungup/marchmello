@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="default-margin">
         <h1 class="ed-title">'{{$store.state.searchKeyword}}' Result</h1>
         <v-container>
             <v-row dense>
@@ -73,5 +73,9 @@
     .ed-title{
         color: #707070;
         margin-left: 5%;
+    }
+    .default-margin{
+        margin-left: 24px;
+        margin-right: 24px;
     }
 </style>
