@@ -2,8 +2,10 @@
     <div>
         {{$store.commit('getThrads')}}
         <h1 class="ed-title">All Threads</h1>
-        <v-container>
-            <v-row dense>
+        <transition>
+            <div v-if="$store.state.items[0]._embedded.threads.length > 0">
+                <v-container>
+                    <v-row dense>
                 <v-col
                         v-for="(item, i) in $store.state.items[0]._embedded.threads"
                         :key="i"
@@ -53,8 +55,17 @@
                         </div>
                     </v-card>
                 </v-col>
-            </v-row>
-        </v-container>
+                    </v-row>
+                </v-container>
+            </div>
+            <div v-else>
+                <v-container>
+                    <v-row dense>
+                <h3 class="ed-title"> Can't find any thread &#128549;</h3>
+                    </v-row>
+                </v-container>
+            </div>
+        </transition>
     </div>
 </template>
 

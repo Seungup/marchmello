@@ -1,7 +1,6 @@
 <template>
     <div class="default-margin" id="search">
         <v-card-actions class="align-center">
-
             <v-text-field class="text-center" solo rounded dense clearable placeholder="Search Threads" v-model="text"
                           v-on:keyup.enter="$store.commit('setSearchKeyword', text)"
             />
