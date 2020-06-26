@@ -4,7 +4,7 @@
     <bar/>
 
     <p>
-        {{this.$store.state.items._embedded}}
+        {{this.$store.state.items[0]._embedded.threads}}
     </p>
 
     <!-- Search Bar -->

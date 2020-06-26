@@ -72,7 +72,7 @@ export default new Vuex.Store({
       state.items = threads
     },
     addThread(state, item){
-      state.items._embedded.threads.append(item)
+      state.items[0]._embedded.threads.push(item)
     }
   },
   actions: {

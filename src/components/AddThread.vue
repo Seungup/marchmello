@@ -65,18 +65,14 @@
                     )
                     .catch(function(error) {
                         console.log(error);
-                    }).then(this.$store.commit('addThread', {})); // <- 여기 나중에 수정
-            },
-            getData: function () {
-                this.$http.get(
-                    this.$store.state.baseUrl + 'threads/'
-                ).then( (response) => {
-                    console.log("data =", response.data);
-                    this.$store.commit('setThreads', response.data);
-                }).catch(function (error) {
-                    console.log(error);
-                })
-            },
+                    }).then(this.$store.commit(
+                        'addThread', {
+                            title: this.$store.state.title,
+                            description: this.$store.state.description
+                    }
+                    )
+                );
+            }
         }
     }
 
