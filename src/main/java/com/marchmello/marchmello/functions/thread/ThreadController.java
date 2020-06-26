@@ -26,9 +26,7 @@ public class ThreadController {
     public @ResponseBody
     boolean addThread(@RequestBody Thread thread){
         if(
-                   thread.getDescription().isEmpty()
-                || thread.getDescription().isEmpty()
-                || thread.getDescription().isBlank()
+                thread.getDescription().isBlank()
                 || thread.getTitle().isBlank()
         ) {
             return false;
