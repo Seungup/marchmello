@@ -1,5 +1,5 @@
 <template>
-    <div class="default-margin">
+    <div>
     <v-card
             max-width="400"
             class="mx-auto"
@@ -85,9 +85,5 @@
     .ed-title{
         color: #707070;
         margin-left: 5%;
-    }
-    .default-margin{
-        margin-left: 24px;
-        margin-right: 24px;
     }
 </style>

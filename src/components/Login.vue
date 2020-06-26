@@ -1,5 +1,5 @@
 <template>
-    <div class="default-margin">
+    <div>
         <h1 class="ed-title">Login</h1>
         <v-card
                 width="324"
@@ -61,10 +61,6 @@
     }
     .ed-title{
         margin-left: 5%;
-    }
-    .default-margin{
-        margin-left: 24px;
-        margin-right: 24px;
     }
 </style>
 

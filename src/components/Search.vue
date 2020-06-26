@@ -1,10 +1,10 @@
 <template>
-    <div class="default-margin" id="search">
+    <div id="search">
         <v-card-actions class="align-center">
-            <v-text-field class="text-center" solo rounded dense clearable placeholder="Search Threads" v-model="text"
+            <v-text-field solo rounded dense clearable placeholder="Search Threads" v-model="text"
                           v-on:keyup.enter="$store.commit('setSearchKeyword', text)"
             />
-            <div v-if="text == ''"> {{$store.commit('setSearchKeywordNull')}} </div>
+            <div v-if="text === ''"> {{$store.commit('setSearchKeywordNull')}} </div>
 
         </v-card-actions>
     </div>
@@ -20,10 +20,3 @@
         }
     }
 </script>
-
-<style scoped>
-.default-margin{
-    margin-left: 24px;
-    margin-right: 24px;
-}
-</style>

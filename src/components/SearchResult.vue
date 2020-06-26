@@ -1,5 +1,5 @@
 <template>
-    <div class="default-margin">
+    <div>
         <h1 class="ed-title">'{{$store.state.searchKeyword}}' Result</h1>
             <v-row dense>
                 <v-col
@@ -7,7 +7,7 @@
                         :key="i"
                         cols="12"
                 >
-                    <div v-if="item.title.toString().indexOf($store.state.searchKeyword) != -1">
+                    <div v-if="item.title.toString().indexOf($store.state.searchKeyword) !== -1">
                         <v-card
                                 color="#DBEDDE"
                                 dark
@@ -69,9 +69,5 @@
     .ed-title{
         color: #707070;
         margin-left: 5%;
-    }
-    .default-margin{
-        margin-left: 24px;
-        margin-right: 24px;
     }
 </style>

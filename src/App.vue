@@ -3,6 +3,7 @@
     <!-- App bar-->
     <bar/>
 
+    <v-main class="default-margin">
 
     <div v-if="this.$store.state.dev === true">
         <hr>
@@ -55,22 +56,23 @@
 
 
 
-    <!-- Threads -->
-    <transition>
-      <div v-if="this.$store.state.searchTrigger === false || this.$store.state.searchKeyword === ''">
-        <MyThreads  v-if="this.$store.state.docState === 'logined'" />
-        <div></div>
-        <AllThreads />
-      </div>
-      <div v-else>
-        <SearchResult/>
-      </div>
-    </transition>
-
-
+        <!-- Threads -->
+        <transition>
+          <div v-if="this.$store.state.searchTrigger === false || this.$store.state.searchKeyword === ''">
+            <MyThreads  v-if="this.$store.state.docState === 'logined'" />
+            <div></div>
+            <AllThreads />
+          </div>
+          <div v-else>
+            <SearchResult/>
+          </div>
+        </transition>
+    </v-main>
 
 
     <!-- FOOTER -->
+
+      <Footer />
   </v-app>
 </template>
 
@@ -85,10 +87,12 @@
   import MyThreads from "./components/MyThreads";
   import AllThreads from "./components/AllThreads";
   import SearchResult from "./components/SearchResult";
+  import Footer from "./components/Footer";
 
 export default {
   name: 'App',
   components: {
+      Footer,
     SearchResult,
     AllThreads,
     MyThreads,
@@ -112,5 +116,9 @@ export default {
   .btn-margin{
     margin-right: auto;
     margin-left: auto;
+  }
+  .default-margin{
+      margin-left: 24px;
+      margin-right: 24px;
   }
 </style>

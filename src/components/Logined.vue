@@ -1,5 +1,5 @@
 <template>
-    <div class="default-margin">
+    <div>
         <h1 class="ed-title">My Profile</h1>
         <v-card-actions>
             <v-btn style="margin-right: 25px" color="#b4dfea" x-large width="180" height="84" rounded
@@ -22,9 +22,5 @@
 .ed-title{
     color: #707070;
     margin-left: 5%;
-}
-.default-margin{
-    margin-left: 24px;
-    margin-right: 24px;
 }
 </style>
