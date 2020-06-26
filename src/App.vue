@@ -3,6 +3,10 @@
     <!-- App bar-->
     <bar/>
 
+    <p>
+        {{this.$store.state.items[0]._embedded.threads}}
+    </p>
+
     <!-- Search Bar -->
     <Transition>
       <search v-if="this.$store.state.searchState === true" v-on:keyup.enter="this.$store.commit('chageSearchState')"/>
@@ -27,7 +31,7 @@
       </div>
     </transition>
 
-    <!-- Functions for exciton error -->
+    <!-- Functions-->
     <div v-if="this.$store.state.docState === 'postThread'" >
         {{
         this.$store.commit('setDocState', 'logined')

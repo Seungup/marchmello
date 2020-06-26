@@ -26,9 +26,8 @@ export default new Vuex.Store({
     description: '',
 
     items : [{
-      "_embedded": {
-        "threads": [
-
+      _embedded: {
+        threads: [
         ]
       }
     }
@@ -69,7 +68,7 @@ export default new Vuex.Store({
       state.userNickname = nickname
     },
     setThreads(state, threads){
-      state.items = threads
+      state.items[0] = threads
     },
     addThread(state, item){
       state.items[0]._embedded.threads.push(item)
